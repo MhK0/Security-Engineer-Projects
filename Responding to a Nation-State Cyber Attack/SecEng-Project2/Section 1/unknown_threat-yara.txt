@@ -1,0 +1,39 @@
+Yara Rule creation : 
+
+rule unknown_threat.yara {
+
+        meta:
+                Author = "Mhk"
+                Description = "the rule will detect a malware shell script file "                
+        
+        strings: 
+                $domain = "darkl0rd.com"
+
+        condition:
+                all of them 
+
+
+
+
+
+
+------------------------------------
+
+Results : 
+
+
+ubuntu@ubuntu-VirtualBox:~$ clamscan -i -d rule Downloads
+LibClamAV Error: yyerror(): rule/unknown_threat.yara line 1 syntax error, unexpected '.', expecting '{'
+LibClamAV Warning: cli_loadyara: failed to parse or load 1 yara rules from file rule/unknown_threat.yara, successfully loaded 0 rules.
+LibClamAV Warning: cli_loadyara: empty database file
+Downloads/SSH-One: YARA.unknown_threat.UNOFFICIAL FOUND
+
+----------- SCAN SUMMARY -----------
+Known viruses: 1
+Engine version: 0.100.3
+Scanned directories: 1
+Scanned files: 8
+Infected files: 1
+Data scanned: 2.40 MB
+Data read: 2.40 MB (ratio 1.00:1)
+Time: 0.044 sec (0 m 0 s)

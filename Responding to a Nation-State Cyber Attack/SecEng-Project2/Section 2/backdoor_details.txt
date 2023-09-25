@@ -1,0 +1,33 @@
+Task 4: Detect Backdoor Username, Process & Port 
+
+	Identify the rogue username:
+
+		The rouge username is darklord .
+ 
+	Justification : 
+		Using the HIDS I was able to analyze the logs and I found that there is authentication logs created after the attacker get access to the system.
+		and he add a user with darklord name and he start doing a suspicious actions using root privileges like changed the listened ports using netstat .   
+
+
+	Locate the malicious process: 
+		
+		The malicious process is remotesec with process id 969.
+	
+	Justification : 
+		Using ps command I analyze the processes and I found a process that is running using root privileges and it command is  /tmp/remotesec -k -l 56565
+		Here the ps command output : https://i.imgur.com/i3YXOq7.png
+	
+
+	IP address/port : 
+
+		The listening port is 56565
+
+	
+	Justification :
+		Using the netstat command I get all the ports that is listening, and I observe what process is suspicious and run by the attacker . 
+		Here the netstat command output : https://i.imgur.com/2T0OV00.png
+
+
+	
+	 
+	

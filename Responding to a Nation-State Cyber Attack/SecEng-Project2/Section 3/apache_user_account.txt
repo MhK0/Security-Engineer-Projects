@@ -1,0 +1,4 @@
+Adding these two lines  in the /etc/apache2 envvars file : 
+
+export APACHE_RUN_USER=apache-user
+export APACHE_RUN_GROUP=apache-group

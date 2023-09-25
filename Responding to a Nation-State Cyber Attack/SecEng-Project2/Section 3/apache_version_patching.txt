@@ -1,0 +1,44 @@
+Using apachectl -v command - the apache version is : Apache/2.4.7 (Ubuntu) . 
+
+-------------
+Before I apply changes on the security.conf file  . 
+ubuntu@ubuntu-VirtualBox:/etc/apache2/conf-enabled$ curl --head localhost
+HTTP/1.1 200 OK
+Date: Mon, 28 Nov 2022 00:47:36 GMT
+Server: Apache/2.4.7 (Ubuntu)
+Last-Modified: Wed, 10 Jun 2020 08:30:54 GMT
+ETag: "2cf6-5a7b6a991f9e8"
+Accept-Ranges: bytes
+Content-Length: 11510
+Vary: Accept-Encoding
+Content-Type: text/html
+
+-https://i.imgur.com/z8LQEIq.png
+----------------------------------
+
+in /etc/apache2/conf-enabled in the security.conf file I made changes in two prameters : 
+
+ServerSignature On
+ServerTokens OS
+
+I changed it to 
+
+ServerSignature Off
+ServerTokens Prod
+
+
+ubuntu@ubuntu-VirtualBox:/etc/apache2/conf-enabled$ curl --head localhost
+HTTP/1.1 200 OK
+Date: Mon, 28 Nov 2022 00:44:15 GMT
+Server: Apache
+Last-Modified: Wed, 10 Jun 2020 08:30:54 GMT
+ETag: "2cf6-5a7b6a991f9e8"
+Accept-Ranges: bytes
+Content-Length: 11510
+Vary: Accept-Encoding
+Content-Type: text/html
+
+-https://i.imgur.com/Ea3Bxgi.png
+
+
+
